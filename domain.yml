@@ -1,0 +1,209 @@
+slots:
+  requested_slot:
+    type: unfeaturized
+  cuisine:
+    type: unfeaturized
+  people:
+    type: unfeaturized
+  location:
+    type: unfeaturized
+  price:
+    type: unfeaturized
+  info:
+    type: unfeaturized
+  restaurant:
+    type: text
+  hotel:
+    type: text
+  startdate:
+    type: unfeaturized
+  enddate:
+    type: unfeaturized
+  outdoor_seating:
+    type: unfeaturized
+  reservations:
+    type: unfeaturized
+  date_suitable:
+    type: unfeaturized
+  has_gym:
+    type: unfeaturized
+  has_spa:
+    type: unfeaturized
+  breakfast:
+    type: unfeaturized
+  active_plan:
+    type: bool
+  plan_complete:
+    type: bool
+  switch:
+    type: bool
+
+intents:
+  - request_restaurant
+  - request_hotel
+  - inform
+  - request_info
+  - about
+  - affirm
+  - deny
+  - correct
+  - chitchat
+  - explain
+  - did_that_work
+  - goodbye
+
+entities:
+  - location
+  - info
+  - people
+  - price
+  - cuisine
+  - outdoor_seating
+  - reservations
+  - date_suitable
+  - has_gym
+  - has_spa
+  - breakfast
+  - startdate
+  - enddate
+
+templates:
+  utter_book_restaurant:
+    - "Booked! Bon appetit!"
+  utter_book_hotel:
+    - "Booked! Have a great trip!"
+  utter_ask_cuisine:
+    - "What kind of cuisine would you like?"
+  utter_ask_people:
+    - "How many people will you be?"
+  utter_ask_location:
+    - "Where?"
+  utter_ask_price:
+    - "What price range?"
+  utter_ask_startdate:
+    - "When should your hotel stay start?"
+  utter_ask_enddate:
+    - "When should your hotel stay end?"
+  utter_search:
+    - "I'm looking for restaurants"
+  utter_finish:
+    - "Ok, I have everything I need now."
+  utter_suggest_restaurant:
+    - "Here is what I found: [papi's pizza place]. Does that work?"
+  utter_suggest_hotel:
+    - "Here is what I found: [real cool hotel for people who love pizza]. Does that work?"
+  utter_happy:
+    - "Great! Let's talk about it later."
+  utter_chitchat:
+    - "Bla bla"
+  utter_filled_slots:
+    - "Ok, I have all the information I need now."
+  utter_ask_details:
+    - "Anything specific?"
+  utter_explain_details_hotel:
+    - "I need some details on your trip to find a suitable hotel"
+  utter_explain_details_restaurant:
+    - "I need some details to find you a suitable place to eat"
+  utter_explain_startdate_hotel:
+    - "I'll need to know when you want to go to check availability."
+  utter_explain_enddate_hotel:
+    - "I need to know when you'll check out"
+  utter_explain_location_hotel:
+    - "To show you relevant results, I'll have to know where you are going"
+  utter_explain_location_restaurant:
+    - "To show you relevant results, I'll have to know what city we're looking in."
+  utter_explain_people_hotel:
+    - "I'll need to know how many of you there are to check which rooms are suitable."
+  utter_explain_people_restaurant:
+    - "I'll need to know how many of you there are to check if a table is available."
+  utter_explain_price_hotel:
+    - "Knowing an approximate price range lets me narrow down search results."
+  utter_explain_price_restaurant:
+    - "Knowing an approximate price range lets me narrow down search results."
+  utter_explain_cuisine_restaurant:
+    - "Knowing which cuisine you want will help me narrow down the results."
+  utter_correct_price_hotel:
+    - "Ok, I've changed the price to {price}"
+  utter_correct_price_restaurant:
+    - "Ok, I've changed the price to {price}"
+  utter_correct_people_hotel:
+    - "Ok, I've changed the number of people to {people}"
+  utter_correct_people_restaurant:
+    - "Ok, I've changed the number of people to {people}"
+  utter_correct_cuisine_restaurant:
+    - "Ok, I've changed the cuisine to {cuisine}"
+  utter_correct_location_hotel:
+    - "Ok, I've changed the location to {location}"
+  utter_correct_location_restaurant:
+    - "Ok, I've changed the location to {location}"
+  utter_correct_enddate_hotel:
+    - "Ok, I've changed your checkout date to {enddate}"
+  utter_correct_startdate_hotel:
+    - "Ok, I've changed your check in date to {startdate}"
+  utter_worked_hotel:
+    - "Yes, based on the info you gave me I recommend these hotels:"
+  utter_worked_restaurant:
+    - "Yes, based on the info you gave me I recommend these restaurants:"
+  utter_more_info_hotel:
+    - "No, I still need some more information from you to find a hotel."
+  utter_more_info_restaurant:
+    - "No, I still need some more information from you to find a restaurant."
+  utter_ask_has_gym:
+    - "Do you need the hotel to have a gym?"
+  utter_ask_has_spa:
+    - "Do you want the hotel to have a spa?"
+
+actions:
+  - utter_ask_cuisine
+  - utter_ask_people
+  - utter_ask_location
+  - utter_ask_price
+  - utter_ask_startdate
+  - utter_ask_enddate
+  - utter_ask_has_gym
+  - utter_ask_has_spa
+  - utter_search
+  - utter_finish
+  - utter_suggest_restaurant
+  - utter_suggest_hotel
+  - utter_happy
+  - utter_explain_details_hotel
+  - utter_explain_details_restaurant
+  - utter_explain_enddate_hotel
+  - utter_explain_location_hotel
+  - utter_explain_location_restaurant
+  - utter_explain_people_hotel
+  - utter_explain_people_restaurant
+  - utter_explain_price_hotel
+  - utter_explain_price_restaurant
+  - utter_explain_startdate_hotel
+  - utter_explain_cuisine_restaurant
+  - utter_worked_hotel
+  - utter_worked_restaurant
+  - utter_chitchat
+  - utter_ask_details
+  - utter_filled_slots
+  - utter_correct_location_hotel
+  - utter_correct_location_restaurant
+  - utter_correct_cuisine_restaurant
+  - utter_correct_price_hotel
+  - utter_correct_price_restaurant
+  - utter_correct_people_hotel
+  - utter_correct_people_restaurant
+  - utter_correct_startdate_hotel
+  - utter_correct_enddate_hotel
+  - utter_more_info_hotel
+  - utter_more_info_restaurant
+  - utter_book_restaurant
+  - utter_book_hotel
+  - actions.ActionSearchRestaurant
+  - actions.ActionSearchHotel
+  - actions.ActionExplain
+  - plan_actions.StartRestaurantPlan
+  - plan_actions.StartHotelPlan
+  - plan_actions.StopPlanSwitch
+  - plan_actions.StopPlan
+  - plan_actions.SpaAnswerParse
+plans:
+  - plan_actions.RestaurantPlan
+  - plan_actions.HotelPlan
