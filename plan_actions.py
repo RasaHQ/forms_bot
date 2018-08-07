@@ -53,8 +53,7 @@ class StartRestaurantPlan(ActionStartPlan):
 
     def run(self, dispatcher, tracker, domain):
         """Simple run implementation uttering a (hopefully defined) template."""
-        # tracker.activate_plan(domain)
-        return [StartPlan(domain, 'restaurant_plan'), SlotSet('active_plan', True), SlotSet('switch', False), SlotSet('plan_complete', False)]
+        return [StartPlan(domain, 'restaurant_plan')]
 
     def name(self):
         return self._name
@@ -70,7 +69,7 @@ class StartHotelPlan(ActionStartPlan):
     def run(self, dispatcher, tracker, domain):
         """Simple run implementation uttering a (hopefully defined) template."""
         # tracker.activate_plan(domain)
-        return [StartPlan(domain, 'hotel_plan'), SlotSet('active_plan', True), SlotSet('switch', False), SlotSet('plan_complete', False)]
+        return [StartPlan(domain, 'hotel_plan')]
 
     def name(self):
         return self._name
@@ -87,7 +86,7 @@ class StopPlanSwitch(Action):
     def run(self, dispatcher, tracker, domain):
         """Simple run implementation uttering a (hopefully defined) template."""
         # tracker.activate_plan(domain)
-        return [EndPlan(), SlotSet('active_plan', False), SlotSet('switch', True)]
+        return [EndPlan()]
 
     def name(self):
         return self._name
@@ -106,7 +105,7 @@ class StopPlan(Action):
             complete = True
         else:
             complete = False
-        return [EndPlan(), SlotSet('active_plan', False), SlotSet('plan_complete', complete)]
+        return [EndPlan(), SlotSet('plan_complete', complete)]
 
     def name(self):
         return self._name

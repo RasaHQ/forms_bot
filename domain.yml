@@ -31,12 +31,12 @@ slots:
     type: unfeaturized
   breakfast:
     type: unfeaturized
-  active_plan:
-    type: bool
+  # active_plan:
+    # type: bool
   plan_complete:
     type: bool
-  switch:
-    type: bool
+  # switch:
+    # type: bool
 
 intents:
   - request_restaurant

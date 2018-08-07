@@ -95,6 +95,7 @@ There is added functionality which can be used:
 `slot_dict = {'FIRST_SLOT_NAME': {'ask_utt': 'WHICH_UTTERANCE_ASKS_FOR_SLOT', "clarify_utt": 'WHICH_UTTERANCE_EXPLAINS_SLOT', "follow_up_action": "WHICH_ACTION_SHOULD_BE_PERFORMED_AFTER_USER_REPLIES"}, ...}`
     - `follow_up_action` will be performed after the user responds to `'ask_utt'`. This can be useful in some cases where you would like to ask a yes/no question. You can then have an action to deal with affirm/deny, such as `SpaAnswerParse` in `plan_actions.py`
     - `clarify_utt` will be said if the user asks for clarification, with `details_intent` (explained below)
+    - 'priority': the lower the value of the priority, the sooner this question will be asked. i.e. if you would like a question to be asked first, set it to `priority`:0
 3. `finish_action`: as above
 4. `exit_dict`: as above
 5. `chitchat_dict`: another {"intent":"action"} dictionary, however in this case the bot, when detecting the relevant intent, will do the corresponding action and then repeat their original question. OPTIONAL
