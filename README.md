@@ -101,7 +101,8 @@ There is added functionality which can be used:
 5. `chitchat_dict`: another {"intent":"action"} dictionary, however in this case the bot, when detecting the relevant intent, will do the corresponding action and then repeat their original question. OPTIONAL
 6. `details_intent`: The intent which is asking for details about the previous question in the form fill. If the bot detects the details intent it will try to execute slot_dict['CURRENT_SLOT_NAME']['clarify_utt']. OPTIONAL
 7. `rules`: a dictionary, defined as `{slot:{value:{keep:[slot,slot2], lose:[slot3]},...}, ...}` which, when matching slot/value pairs will alter which slots need to be filled to trigger the finish action of the Form. This is implemented in the restaurant form OPTIONAL
-
+8. `max_turns`: the maximum number of turns without completion that the bot will do before exiting with `failure_action`. Defaults to 10
+9. `failure_action`: action which will occur when the maximum number of turns has been passed. This defaults to the finish_action but can be set to be anything
 The Forms need to be made as objects and then referenced in the domain (see domain.yml here). Core will trigger the Form when your activate action is predicted, and stories/featurizer will ignore the intents/actions carried out within the Form, with the exception of slot setting.
 
 ### Advanced stories

@@ -22,7 +22,8 @@ class RestaurantPlan(SimpleForm):
 
         rules = {"cuisine":{"mcdonalds": {'need':['location'], 'lose':['people', 'price']}}}
 
-        super(RestaurantPlan, self).__init__(name, slot_dict, finish_action, exit_dict, chitchat_dict, details_intent, rules)
+        failure_action = 'utter_human_hand_off'
+        super(RestaurantPlan, self).__init__(name, slot_dict, finish_action, exit_dict, chitchat_dict, details_intent, rules, failure_action=failure_action)
 
 
 class HotelPlan(SimpleForm):
@@ -44,7 +45,9 @@ class HotelPlan(SimpleForm):
 
         rules = {}
 
-        super(HotelPlan, self).__init__(name, slot_dict, finish_action, exit_dict, chitchat_dict, details_intent, rules)
+        failure_action = 'utter_human_hand_off'
+
+        super(HotelPlan, self).__init__(name, slot_dict, finish_action, exit_dict, chitchat_dict, details_intent, rules, failure_action=failure_action)
 
 class StartRestaurantPlan(ActionStartPlan):
 

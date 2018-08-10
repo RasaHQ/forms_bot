@@ -152,8 +152,10 @@ templates:
     - "Do you need the hotel to have a gym?"
   utter_ask_has_spa:
     - "Do you want the hotel to have a spa?"
-
+  utter_human_hand_off:
+    - "Ok, I think we're having issues. I will forward you to a customer service agent"
 actions:
+  - utter_human_hand_off
   - utter_ask_cuisine
   - utter_ask_people
   - utter_ask_location
